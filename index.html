@@ -3,69 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Countdown to Eid-ul-Azha</title>
+    <title>Simple Blog Page</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f9f9f9;
-            color: #333;
+            line-height: 1.6;
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            background-color: #f4f4f4;
+            color: #333;
         }
 
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
         }
 
-        #countdown {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #007BFF;
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 2rem 0;
+        }
+
+        article {
+            background: #fff;
+            margin: 1rem 0;
+            padding: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
         footer {
-            margin-top: 20px;
-            font-size: 0.9rem;
-            color: #666;
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
         }
     </style>
 </head>
 <body>
-    <h1>Countdown to Eid-ul-Azha</h1>
-    <div id="countdown">Loading...</div>
-
+    <header>
+        <h1>Welcome to My Blog</h1>
+    </header>
+    <div class="container">
+        <article>
+            <h2>Blog Post Title</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet accumsan arcu. Proin ac consequat arcu. Integer vel libero id lorem fermentum tincidunt.</p>
+        </article>
+        <article>
+            <h2>Another Blog Post</h2>
+            <p>Curabitur nec lacus elit. Pellentesque convallis nisi ac augue pharetra eu tristique neque consequat. Sed euismod, nisl nec tincidunt luctus, nunc massa facilisis nisi, non tincidunt orci risus ut nulla.</p>
+        </article>
+    </div>
     <footer>
-        &copy; 2026 Eid Countdown
+        <p>Copyright &copy; 2026 My Blog</p>
     </footer>
-
-    <script>
-        function calculateCountdown() {
-            const eidDate = new Date('2026-06-28T00:00:00'); // Adjust the date for Eid-ul-Azha
-            const now = new Date();
-            const timeDifference = eidDate - now;
-
-            if (timeDifference <= 0) {
-                document.getElementById('countdown').textContent = "Eid-ul-Azha is here!";
-                return;
-            }
-
-            const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
-
-            document.getElementById('countdown').textContent = 
-                `${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
-        }
-
-        setInterval(calculateCountdown, 1000);
-    </script>
 </body>
 </html>
